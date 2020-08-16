@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Titanic Survival Predictor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body id="index">
+    <h2>Titanic Survival Predictor</h2>
+    <div id="form">
+      <form action="{% url 'result' %}">
+        {% csrf_token %}
+        <label for="sex">Sex: </label><br>
+        <select name="sex">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select><br>
+        <label for="title">Title: </label><br>
+        <select name="title">
+          <option value="0">Mr.</option>
+          <option value="1">Miss.</option>
+          <option value="2">Mrs.</option>
+          <option value="3">Master</option>
+          <option value="4">Dr.</option>
+          <option value="5">Rev.</option>
+          <option value="6">Capt.</option>
+          <option value="6">Major</option>
+          <option value="7">Lady</option>
+          <option value="7">Sir</option>
+        </select><br>
+        <label for="age">Age: </label><br>
+        <input type="number" name="age"><br>
+        <label for="sibsp">Number of siblings and spouses aboard: </label><br>
+        <input type="number" name="sibsp"> <br>
+        <label for="parch">Number of children and parents aboard: </label><br>
+        <input type="number" name="parch"> <br>
+        <label for="pclass">Passenger class: </label><br>
+        <select name="pclass">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select><br>
+        <label for="fare">Fare (0-300): </label><br>
+        <input type="number" name="fare"> <br>
+        <label for="embarked">Embarked: </label><br>
+        <select name="embarked">
+          <option value="0">S</option>
+          <option value="1">C</option>
+          <option value="2">Q</option>
+        </select><br><br>
+        <input type="submit"><br>
+      </form>
+    </div>
+  </body>
+</html>

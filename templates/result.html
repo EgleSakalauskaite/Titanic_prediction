@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Titanic - Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body onload="myFunction()" id="result_image">
+    <div id="prediction_div">
+      <p>Result is:</p>
+      <p id="prediction_value">{{prediction}}</p>
+      <a href="{% url 'home' %}">Try again</a>
+    </div>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
